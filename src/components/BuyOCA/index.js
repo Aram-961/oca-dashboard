@@ -3,31 +3,29 @@ import { Dropdown } from "primereact/dropdown";
 import styles from "./buyoca.module.css";
 
 const BuyOca = () => {
-    const [amount, setAmount] = useState(0);
-    const [increase, setIncrease] = useState("OCA Amount");
-    const [decrease, setDecrease] = useState(0);
-    const { buttonsPanel, panelInput, panelScreen, BuyPanel, amountOca, connectWallet } = styles;
+    const [amountOCA, setAmountOCA] = useState(0);
+    const { box, buttonsPanel, panelInput, panelScreen, BuyPanel, amountOca, connectWallet } = styles;
 
     const MaxAmount = 10000;
 
     // use ternary op
     const handleIncrease = () => {
-        if (+ increase < MaxAmount) {
-            setIncrease(+ increase + 1);
+        if (+ amountOCA < MaxAmount) {
+            setAmountOCA(+ amountOCA + 1);
         }
-        console.log(increase);
+        console.log(amountOCA);
     };
 
     // use ternary op
     const handleDecrease = () => {
-        if (+ decrease > 1) {
-            setDecrease(+ decrease - 1);
+        if (+ amountOCA > 1) {
+            setAmountOCA(+ amountOCA - 1);
         }
-        console.log(decrease);
+        console.log(amountOCA);
     };
     return (
         <div className="column">
-            <div className="box" style={{ background: "#21242C", padding: "20px" }}>
+            <div className={`box ${box}`} style={{ background: "#21242C" }}>
                 <h1 className="is-size-3 has-text-white has-text-weight-semibold">
                     Buy
                 </h1>
@@ -53,7 +51,10 @@ const BuyOca = () => {
                     </div>
                 </div>
                 {/* img here  */}
-                <div className={panelScreen} />
+                <div className={`${panelScreen}`}>
+                    <img src="/media/screen.svg" alt="img" />
+                </div>
+
                 <div className={BuyPanel}>
                     <div
                         className="field is-flex is-justify-content-center is-align-items-center mb-0"
@@ -68,9 +69,7 @@ const BuyOca = () => {
                             <input
                                 className={panelInput}
                                 type="text"
-                                placeholder="Name"
-                            // value={formatNumber(amount)}
-                            // onChange={handleAmountChange}
+                                placeholder="OCA AMOUNT"
                             />
                         </div>
                         <div className="control">

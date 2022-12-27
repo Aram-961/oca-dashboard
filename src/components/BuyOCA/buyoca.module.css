@@ -1,7 +1,10 @@
-/* .amountOca {
-    background-color: #191B1F;
-    padding: 0.9rem 2rem;
-    border-radius: 1rem;
+/* .box {
+    height: 1px;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    
 } */
 
 
@@ -17,11 +20,13 @@
 }
 
 
-.panelScreen {
-    background: url('/public/media/Other\ 07.svg');
-}
-
-
+/* .panelScreen {
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+    /* background: url('/public/media/screen.svg') no-repeat;    */
+/* }  */
 
 .buttonsPanel {
     background-color: #191b1f;
