@@ -1,18 +1,7 @@
-/* .box {
-    height: 1px;
-    min-height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    
-} */
-
-
-.BuyPanel {
-    height: 80px;
+.Box {
+    height: 90px;
     background-color: #2D2F3A;
     border-radius: 0.75rem;
-    margin: 0 0 1.25rem;
     padding: 1.25rem 1.25rem;
     display: flex;
     justify-content: center;
@@ -20,13 +9,15 @@
 }
 
 
-/* .panelScreen {
+.panelScreen {
     flex-grow: 1;
     overflow: hidden;
     position: relative;
-    padding: 10px;
-    /* background: url('/public/media/screen.svg') no-repeat;    */
-/* }  */
+    padding: 14rem;
+    background: url('/media/Panel.svg')no-repeat;
+    background-size: contain;
+    background-position: center;
+}
 
 .buttonsPanel {
     background-color: #191b1f;
@@ -58,4 +49,17 @@
     border-radius: 12px;
     box-shadow: none;
     outline: none;
+}
+
+.panelInput::placeholder {
+    font-size: 0.9rem;
+}
+
+
+.connectButton {
+    background: #4b74e2;
+    border: 0;
+    color: #fff;
+    padding: 2rem 0;
+    border-radius: 10px;
 }

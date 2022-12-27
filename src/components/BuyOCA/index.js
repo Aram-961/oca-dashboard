@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { Dropdown } from "primereact/dropdown";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from "./buyoca.module.css";
 
 const BuyOca = () => {
     const [amountOCA, setAmountOCA] = useState(0);
-    const { box, buttonsPanel, panelInput, panelScreen, BuyPanel, amountOca, connectWallet } = styles;
+    const { box, buttonsPanel, panelInput, panelScreen, Box, connectWallet, connectButton, priceBox } = styles;
 
     const MaxAmount = 10000;
+
+
+    const handleChange = (e) => {
+        const OcaValue = e.target.value.replace(/,/g, '');
+    }
 
     // use ternary op
     const handleIncrease = () => {
@@ -23,6 +30,7 @@ const BuyOca = () => {
         }
         console.log(amountOCA);
     };
+    // continue working on the dropdown to jump on the other parts
     return (
         <div className="column">
             <div className={`box ${box}`} style={{ background: "#21242C" }}>
@@ -30,7 +38,7 @@ const BuyOca = () => {
                     Buy
                 </h1>
                 <div
-                    className="box is-flex is-align-items-center is-justify-content-space-between my-4"
+                    className={`${Box} box is-flex is-align-items-center is-justify-content-space-between my-4`}
                     style={{ background: "#2D2F3A", height: "75px" }}
                 >
                     <div className="">
@@ -51,11 +59,8 @@ const BuyOca = () => {
                     </div>
                 </div>
                 {/* img here  */}
-                <div className={`${panelScreen}`}>
-                    <img src="/media/screen.svg" alt="img" />
-                </div>
-
-                <div className={BuyPanel}>
+                <div className={`${panelScreen}`} />
+                <div className={Box}>
                     <div
                         className="field is-flex is-justify-content-center is-align-items-center mb-0"
                         style={{ columnGap: '10px' }}
@@ -68,8 +73,10 @@ const BuyOca = () => {
                         <div className="control flex-grow-1">
                             <input
                                 className={panelInput}
+                                value={amountOCA}
                                 type="text"
                                 placeholder="OCA AMOUNT"
+                                onChange={handleChange}
                             />
                         </div>
                         <div className="control">
@@ -81,7 +88,7 @@ const BuyOca = () => {
                 </div>
                 <div className="currencyChange py-3">
                     <div
-                        className="box is-flex is-align-items-center is-justify-content-space-between"
+                        className={`${Box} box is-flex is-align-items-center is-justify-content-space-between`}
                         style={{ background: "#2D2F3A" }}
                     >
                         <div className="">
@@ -92,21 +99,18 @@ const BuyOca = () => {
                             </h2>
                         </div>
 
-                        {/* <Dropdown
-                            options={CryptoItems}
-                            // itemTemplate={optionsTemplate}
-                            // valueTemplate={selectedCryptoTemplate}
-                            // onChange={onCryptoChange}
-                            // value={selectedCrypto}
-                            placeholder="Crypto"
-                            panelClassName="tab3-dropdown"
-                        /> */}
+                        {/* dropdown here  */}
+                        <div className="is-flex is-justify-content-end">
+                            <Dropdown
+                                placeholder="Crypto"
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className={`${connectWallet} py-2 has-text-centered`}>
-                    <div className="box" style={{ background: "#3B62CC" }}>
-                        <a className={`${connectWallet} has-text-white`}>Connect Wallet</a>
-                    </div>
+                    <button className={`${connectButton} button is-fullwidth medium has-shadow has-border-radius-10`}>
+                        <span>Connect Wallet</span>
+                    </button>
                 </div>
             </div>
         </div>
