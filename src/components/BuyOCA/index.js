@@ -1,35 +1,69 @@
 import { useState } from "react";
 import { Dropdown } from "primereact/dropdown";
 import { ToastContainer, toast } from 'react-toastify';
+// import CryptoItems from "../../static/buyoca/coinitems";
 import 'react-toastify/dist/ReactToastify.css';
 import styles from "./buyoca.module.css";
 
+
+
 const BuyOca = () => {
     const [amountOCA, setAmountOCA] = useState(0);
+    const [crypto, setCrypto] = useState();
     const { box, buttonsPanel, panelInput, panelScreen, Box, connectWallet, connectButton, priceBox } = styles;
 
-    const MaxAmount = 10000;
+    const MaxOcaAmount = 1000;
+
+    const CryptoItems = [
+        { label: 'ETH', icon: '/media/logos/ETH.png', name: 'Ethereum' },
+        { label: 'USDC', icon: '/media/logos/usdc.png', name: 'Usdc' },
+        { label: 'USDT', icon: '/media/logos/usdt.png', name: 'Usdt' },
+        { label: 'BUSD', icon: '/media/logos/busd.png', name: 'Busd' },
+    ];
 
 
     const handleChange = (e) => {
         const OcaValue = e.target.value.replace(/,/g, '');
     }
 
-    // use ternary op
+    const CryptoChange = () => {
+    }
+
     const handleIncrease = () => {
-        if (+ amountOCA < MaxAmount) {
+        if (amountOCA < MaxOcaAmount) {
             setAmountOCA(+ amountOCA + 1);
         }
         console.log(amountOCA);
     };
 
-    // use ternary op
     const handleDecrease = () => {
-        if (+ amountOCA > 1) {
+        if (amountOCA > 0) {
             setAmountOCA(+ amountOCA - 1);
         }
         console.log(amountOCA);
     };
+
+    // do this on change (dropdown)
+    const CurrencyChange = (i) => {
+        setCrypto(i.value);
+    }
+
+    // coins options inside dropdown eth bnb etc..
+    const CoinOptions = () => {
+        return (
+            <div>
+                {
+                    CryptoItems.map((options) => {
+                        return (
+                            <div>
+                                <h1>{options.name}</h1>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        )
+    }
     // continue working on the dropdown to jump on the other parts
     return (
         <div className="column">
@@ -47,8 +81,9 @@ const BuyOca = () => {
                         {/* <span className='has-has-text-primary'> OCA </span> */}
                     </div>
                     <div
-                        className="has-background-black is-flex is-align-items-center is-justify-content-center"
+                        className="is-flex is-align-items-center is-justify-content-center"
                         style={{
+                            background: '#191b1f',
                             padding: "0.6rem",
                             borderRadius: "50%",
                             width: "50px",
@@ -102,7 +137,12 @@ const BuyOca = () => {
                         {/* dropdown here  */}
                         <div className="is-flex is-justify-content-end">
                             <Dropdown
-                                placeholder="Crypto"
+                                placeholder="ETH"
+                                panelClassName="tab3-dropdown"
+                                options={CryptoItems}
+                                itemTemplate={CoinOptions}
+                                value={crypto}
+
                             />
                         </div>
                     </div>

@@ -13,8 +13,8 @@
     flex-grow: 1;
     overflow: hidden;
     position: relative;
-    padding: 14rem;
-    background: url('/media/Panel.svg')no-repeat;
+    padding: 11rem;
+    background: url('/media/Panel.svg') no-repeat;
     background-size: contain;
     background-position: center;
 }
