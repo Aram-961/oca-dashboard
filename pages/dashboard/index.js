@@ -2,12 +2,13 @@ import BuyOca from "../../src/components/BuyOCA";
 import Wallet from "../../src/components/Wallet";
 import CliffPeriod from "../../src/components/CliffPeriod";
 import style from './dashboard.module.css';
+import Vesting from "../../src/components/VestingPanel";
 
 
 
 
 const OcaDashboard = () => {
-    const { root, Panel, containerGrid, box, item1, item2, BgContainer } = style;
+    const { root, Panel, containerGrid, box, item1, item2, item3, BgContainer, vestingBg } = style;
     return (
         <div className={`${root}`}>
             <div className="container px-2" style={{ height: '100%' }}>
@@ -28,9 +29,15 @@ const OcaDashboard = () => {
                                     </div>
                                 </div>
 
-                                <div className={item2} style={{margin: '20px 0',}}>
+                                <div className={item2} style={{ margin: '20px 0', }}>
                                     <div className={`${box} ${BgContainer} box is-flex is-flex-column`} style={{ height: '100%' }}>
                                         <CliffPeriod />
+                                    </div>
+                                </div>
+
+                                <div className={item3}>
+                                    <div className={`${box} ${vestingBg} box`}>
+                                        <Vesting />
                                     </div>
                                 </div>
                             </div>
