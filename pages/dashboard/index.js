@@ -3,12 +3,13 @@ import Wallet from "../../src/components/Wallet";
 import CliffPeriod from "../../src/components/CliffPeriod";
 import style from './dashboard.module.css';
 import Vesting from "../../src/components/VestingPanel";
+import RecentPurchase from "../../src/components/RecentPurchase";
 
 
 
 
 const OcaDashboard = () => {
-    const { root, Panel, containerGrid, box, item1, item2, item3, BgContainer, vestingBg } = style;
+    const { root, Panel, containerGrid, box, item1, item2, item3, item4, BgContainer, vestingBg } = style;
     return (
         <div className={`${root}`}>
             <div className="container px-2" style={{ height: '100%' }}>
@@ -16,7 +17,7 @@ const OcaDashboard = () => {
                     <div className="column is-4">
                         <BuyOca />
                     </div>
-                    <div className="column is-4">
+                    <div className="column is-10">
                         <div className={`${Panel} my-6`}>
                             {/* Dashboard Title here */}
                             <div>
@@ -30,14 +31,20 @@ const OcaDashboard = () => {
                                 </div>
 
                                 <div className={item2} style={{ margin: '20px 0', }}>
-                                    <div className={`${box} ${BgContainer} box is-flex is-flex-column`} style={{ height: '100%' }}>
+                                    <div className={`box ${box} ${BgContainer}`} style={{ height: '100%' }}>
                                         <CliffPeriod />
                                     </div>
                                 </div>
 
                                 <div className={item3}>
-                                    <div className={`${box} ${vestingBg} box`}>
+                                    <div className={`${box} ${vestingBg} box`} style={{ margin: '20px 0' }}>
                                         <Vesting />
+                                    </div>
+                                </div>
+
+                                <div className={item4}>
+                                    <div className={`${box} box`}>
+                                        <RecentPurchase />
                                     </div>
                                 </div>
                             </div>

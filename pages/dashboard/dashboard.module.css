@@ -8,19 +8,53 @@
     background: #21242c;
 }
 
-.item2 {
-    position: relative;
-}
-
 .BgContainer::after {
     position: absolute;
     content: '';
-    top: 0;
-    left: 13%;
+    top: 9.5%;
+    left: 17%;
     width: 100%;
     height: 100%;
     background: url('/media/designn.svg');
     background-repeat: no-repeat;
     background-position: left 0px top 0px;
     opacity: 0.5;
+}
+
+.Panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.containerGrid {
+    flex-grow: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 20px 20px;
+    grid-template-areas:
+        'w w w w w v v v v v v v'
+        'c c c c c v v v v v v v'
+        'c c c c c v v v v v v v'
+        't t t t t t t t t t t t'
+        't t t t t t t t t t t t';
+}
+
+.item1 {
+    grid-area: w;
+}
+
+.item2 {
+    grid-area: c;
+    position: relative;
+}
+
+.item3 {
+    grid-area: v;
+}
+
+.item4 {
+    grid-area: t;
 }
