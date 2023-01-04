@@ -1,10 +1,35 @@
-.box {
+/* .box {
     background: #2D2F3A;
     padding: 1rem 2px;
     border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.boxContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
 }
 
 .containerBox {
     padding: 1.25rem 0;
     height: 100%;
+}
+
+.CryptoList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.coinContainer {
+    display: flex;
+    align-items: center;
+} */
+
+.purchaseContainer {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
 }

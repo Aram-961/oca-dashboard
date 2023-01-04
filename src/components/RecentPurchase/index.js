@@ -2,46 +2,50 @@ import cryptoItems from '../../static/Recent';
 import styles from './recent.module.css';
 
 const RecentPurchase = () => {
-    const { boxContainer, box, containerBox, CryptoList, coinContainer, } = styles;
+    const { boxContainer, box, purchaseBox, purchaseContainer, containerBox, CryptoList, coinContainer, } = styles;
     return (
-        <div className={`${boxContainer}`}>
-            <div>
-                <h1 className="has-text-white is-size-4 has-text-weight-semibold">Recent Purchases</h1>
-                <div className={containerBox}>
-                    <div>
-                        {
-                            cryptoItems.map((items) => {
-                                return (
-                                    <div className={`${CryptoList} ${box}`}>
-                                        <div className={`is-flex is-align-items-center`} style={{}}>
-                                            <div className='is-flex is-align-items-center ' style={{ gap: '10px' }}>
-                                                <div
-                                                    className='is-flex is-align-items-center is-justify-content-center'
-                                                    style={{
-                                                        background: '#191b1f',
-                                                        borderRadius: '50%',
-                                                        width: '50px',
-                                                        height: '50px',
-                                                        placeItems: 'center'
-                                                    }}
-                                                >
-                                                    <img src={items.coinImg} width={17} />
+        <div>
+            <div className='is-flex is-justify-content-space-between'>
+                <h1 className="title is-4 has-text-white mb-5">Recent Purchases</h1>
+                <h1 className='has-text-white'>
+                    <a className='has-text-white is-size-5 has-text-weight-semibold' href="#">View All</a>
+                </h1>
+            </div>
+            <div className={`${containerBox}`}>
+                <div className={boxContainer}>
+                    {
+                        cryptoItems.map((items) => {
+                            return (
+                                <div className={purchaseBox} key={items.id}>
+                                    <div className={`${purchaseContainer}`}>
+                                        <div className='is-flex is-align-items-center'>
+                                            <div className='mr-2'>
+                                                <div className='is-flex is-align-items-center is-justify-content-center' style={{
+                                                    background: '#191b1f',
+                                                    borderRadius: '50%',
+                                                    width: '50px',
+                                                    height: '50px',
+                                                }}>
+                                                    <img src={items.coinImg} alt="" width={18} />
                                                 </div>
-                                                <div>
-                                                    <h1 className='has-text-white mb-0'>Ethereum</h1>
-                                                    <h1 className='has-text-white has-text-weight-semibold mb-0'>{items.coinName}</h1>
-                                                </div>
-
-                                                <div className={coinContainer}>
-
-                                                </div>
+                                            </div>
+                                            <div>
+                                                <h1 className='has-text-grey is-size-5'>{items.coin}</h1>
+                                                <h2 className='has-text-white is-size-5 has-text-weight-semibold'>{items.coinName}</h2>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <h1>Amount</h1>
+                                                <h2>{items.AmountEth}</h2>
                                             </div>
                                         </div>
                                     </div>
-                                )
-                            })
-                        }
-                    </div>
+                                </div>
+
+                            )
+                        })
+                    }
                 </div>
             </div>
         </div>
