@@ -1,0 +1,10 @@
+.box {
+    background: #2D2F3A;
+    padding: 1rem 2px;
+    border-radius: 12px;
+}
+
+.containerBox {
+    padding: 1.25rem 0;
+    height: 100%;
+}

@@ -2,9 +2,9 @@ import cliffData from "../../static/cliffperiod";
 
 const CliffPeriod = () => {
     return (
-        <div className="is-flex-grow-1 is-flex-column">
+        <div className="is-flex is-flex-direction-column">
             <h1 className="has-text-white has-text-weight-semibold is-size-5 mb-5">Cliff Period</h1>
-            <div className="columns is-multiline my-5">
+            <div className="columns is-multiline py-5">
                 {
 
                     cliffData.map((items) => {

@@ -25,13 +25,13 @@ const OcaDashboard = () => {
                             </div>
                             <div className={`${containerGrid} is-flex-grow-1`}>
                                 <div className={item1}>
-                                    <div className={`${box} box`} style={{ height: '100%' }}>
+                                    <div className={`${box} box`}>
                                         <Wallet />
                                     </div>
                                 </div>
 
-                                <div className={item2} style={{ margin: '20px 0', }}>
-                                    <div className={`box ${box} ${BgContainer}`} style={{ height: '100%' }}>
+                                <div className={item2}>
+                                    <div className={`box ${box} ${BgContainer}`}>
                                         <CliffPeriod />
                                     </div>
                                 </div>
