@@ -9,7 +9,7 @@ const CliffPeriod = () => {
 
                     cliffData.map((items) => {
                         return (
-                            <div className="column is-flex is-align-items-center" style={{ gap: '10px' }}>
+                            <div className="column is-9 is-flex is-align-items-center" style={{ gap: '10px' }}>
                                 <div
                                     className="is-flex is-align-items-center"
                                     style={{

@@ -1,7 +1,14 @@
+@import '/src/sass/vars.scss';
+
 .root {
-    min-height: calc(100vh - 0px);
-    background: #191b1f;
-    padding-top: 30px;
+    height: calc(100vh - 3.25rem);
+    min-height: 650px;
+    padding: 30px 0;
+    background: $black1;
+}
+
+.DashBoardContainer {
+    height: calc(100% - 36px);
 }
 
 .box {
@@ -11,23 +18,27 @@
 .BgContainer::after {
     position: absolute;
     content: '';
-    top: 4.5%;
-    left: 17%;
+    top: 16%;
+    left: 7%;
     width: 100%;
     height: 100%;
     background: url('/media/designn.svg');
     background-repeat: no-repeat;
     background-position: left 0px top 0px;
     opacity: 0.5;
+    /* z-index: 0; */
 }
 
-.Panel {
+.panelRoot {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    background: transparent;
 }
 
-.containerGrid {
+.container {
+    display: flex;
+    flex-direction: column;
     flex-grow: 1;
     min-height: 0;
     display: grid;
@@ -49,12 +60,4 @@
 .item2 {
     grid-area: c;
     position: relative;
-}
-
-.item3 {
-    grid-area: v;
-}
-
-.item4 {
-    grid-area: t;
 }

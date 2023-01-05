@@ -2,7 +2,7 @@ import cryptoItems from '../../static/Recent';
 import styles from './recent.module.css';
 
 const RecentPurchase = () => {
-    const { boxContainer, box, purchaseBox, purchaseContainer, containerBox, CryptoList, coinContainer, } = styles;
+    const { boxContainer, box, purchaseBox, purchaseContainer, containerBox, CryptoList, coinContainer, bxHolder,} = styles;
     return (
         <div>
             <div className='is-flex is-justify-content-space-between'>
@@ -34,10 +34,29 @@ const RecentPurchase = () => {
                                                 <h2 className='has-text-white is-size-5 has-text-weight-semibold'>{items.coinName}</h2>
                                             </div>
                                         </div>
-                                        <div>
-                                            <div>
-                                                <h1>Amount</h1>
+
+                                        <div className={bxHolder}>
+                                            <div className={coinContainer}>
+                                                <h1 className='has-text-white'>
+                                                    Amount
+                                                    <span>(ETH)</span>
+                                                </h1>
                                                 <h2>{items.AmountEth}</h2>
+                                            </div>
+
+                                            <div className={coinContainer}>
+                                                <h1 className='has-text-white'>
+                                                    Amount
+                                                    <span>(OCA)</span>
+                                                </h1>
+                                                <h2>{items.AmountOca}</h2>
+                                            </div>
+
+                                            <div className={coinContainer}>
+                                                <h1 className='has-text-white'>
+                                                    From
+                                                </h1>
+                                                <h2>{items.hash}</h2>
                                             </div>
                                         </div>
                                     </div>

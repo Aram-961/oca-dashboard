@@ -1,8 +1,5 @@
 import { useState } from "react";
 import { Dropdown } from "primereact/dropdown";
-import { ToastContainer, toast } from 'react-toastify';
-// import CryptoItems from "../../static/buyoca/coinitems";
-import 'react-toastify/dist/ReactToastify.css';
 import styles from "./buyoca.module.css";
 
 
@@ -10,7 +7,7 @@ import styles from "./buyoca.module.css";
 const BuyOca = () => {
     const [amountOCA, setAmountOCA] = useState(0);
     const [crypto, setCrypto] = useState();
-    const { box, buttonsPanel, panelInput, panelScreen, Box, connectWallet, connectButton, priceBox } = styles;
+    const { boxPanel, buttonsPanel, panelInput, panelScreen, Box, connectWallet, connectButton, priceBox } = styles;
 
     const MaxOcaAmount = 1000;
 
@@ -43,7 +40,6 @@ const BuyOca = () => {
         console.log(amountOCA);
     };
 
-    // do this on change (dropdown)
     const CurrencyChange = (i) => {
         setCrypto(i.value);
     }
@@ -64,22 +60,21 @@ const BuyOca = () => {
             </div>
         )
     }
-    // continue working on the dropdown to jump on the other parts
     return (
-        <div className="column">
-            <div className={`box ${box}`} style={{ background: "#21242C" }}>
+        <div>
+            <div className={`box ${boxPanel}`}>
                 <h1 className="is-size-3 has-text-white has-text-weight-semibold">
                     Buy
                 </h1>
                 <div
-                    className={`${Box} box is-flex is-align-items-center is-justify-content-space-between my-4`}
-                    style={{ background: "#2D2F3A", height: "75px" }}
-                >
-                    <div className="">
+                    className={`${Box} is-flex is-align-items-center is-justify-content-space-between my-4`}>
+
+                    <div>
                         <h1 className="has-text-white">0.1USD</h1>
                         <h2 className="has-text-white">Private Price</h2>
                         {/* <span className='has-has-text-primary'> OCA </span> */}
                     </div>
+
                     <div
                         className="is-flex is-align-items-center is-justify-content-center"
                         style={{
@@ -93,8 +88,10 @@ const BuyOca = () => {
                         <img src="/media/fees.svg" alt="" />
                     </div>
                 </div>
+
                 {/* img here  */}
                 <div className={`${panelScreen}`} />
+
                 <div className={Box}>
                     <div
                         className="field is-flex is-justify-content-center is-align-items-center mb-0"

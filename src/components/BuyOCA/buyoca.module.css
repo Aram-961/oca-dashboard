@@ -1,11 +1,12 @@
 .Box {
-    height: 90px;
     background-color: #2D2F3A;
     border-radius: 0.75rem;
     padding: 1.25rem 1.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.boxPanel {
+    background: #21242C;
+    min-height: 100%;
 }
 
 
