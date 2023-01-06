@@ -1,7 +1,7 @@
 import BuyOca from "../../src/components/BuyOCA";
 import Wallet from "../../src/components/Wallet";
 import CliffPeriod from "../../src/components/CliffPeriod";
-import style from './dashboard.module.scss';
+import style from './dashboard.module.css';
 import Vesting from "../../src/components/VestingPanel";
 import RecentPurchase from "../../src/components/RecentPurchase";
 
@@ -21,19 +21,29 @@ const OcaDashboard = () => {
                         </div>
 
                         <div className="column">
-                            <div className={`${panelRoot} box px-0 pb-0`}>
+                            <div className={`${panelRoot} box has-background-black1 px-0 pb-0`}>
                                 <div>
-                                    <h1 className="title is-4 has-text-grey mb-5">Dashboard</h1>
+                                    <h1 className="title is-4 ww mb-5">Dashboard</h1>
                                 </div>
-                                <div className={`${container} is-flex-grow-1`}>
+                                <div className={`${container}`}>
                                     <div className={item1}>
-                                        <div className="box has-background-black2" style={{ background: '#21242c', height: '100%' }}>
+                                        <div className="box black2" style={{ height: '100%' }}>
                                             <Wallet />
                                         </div>
                                     </div>
                                     <div className={item2}>
-                                        <div className={`${BgContainer} box`}>
-
+                                        <div className={`${BgContainer} box black2`} style={{ height: '100%' }}>
+                                            <CliffPeriod />
+                                        </div>
+                                    </div>
+                                    <div className={item3} style={{ height: '100%' }}>
+                                        <div className="box black2">
+                                            <Vesting />
+                                        </div>
+                                    </div>
+                                    <div className={item4} style={{ height: '100%' }}>
+                                        <div className="box black2">
+                                            <RecentPurchase />
                                         </div>
                                     </div>
                                 </div>

@@ -1,11 +1,7 @@
-.purchaseContainer {
-    display: flex;
-    /* flex-direction: row; */
-    /* justify-content: space-between; */
-}
+.RecentBox {
+    height: 100%;
+    position: relative;
 
-.bxHolder {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    flex-direction: column;
 }
