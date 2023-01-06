@@ -41,10 +41,8 @@ const OcaDashboard = () => {
                                             <Vesting />
                                         </div>
                                     </div>
-                                    <div className={item4} style={{ height: '100%' }}>
-                                        <div className="box black2">
-                                            <RecentPurchase />
-                                        </div>
+                                    <div className={item4}>
+                                        <RecentPurchase />
                                     </div>
                                 </div>
                             </div>

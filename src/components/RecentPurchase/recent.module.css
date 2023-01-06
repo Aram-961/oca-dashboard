@@ -1,7 +1,41 @@
+@import '/styles/colorHelper.css';
+
 .RecentBox {
     height: 100%;
     position: relative;
-
     display: flex;
     flex-direction: column;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+}
+
+.boxContainer {
+    overflow: hidden;
+    height: 100%;
+}
+
+.paymentBox {
+    background: #2d2f3a;
+    height: 100%;
+    border-radius: .75rem;
+    padding: .9375rem .625rem;
+}
+
+
+/* .paymentContainer:first-child {
+    display: flex;
+    max-width: 9.375rem;
+} */
+
+
+@media all and (max-width: 768px) {
+    .coinContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }

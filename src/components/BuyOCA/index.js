@@ -70,15 +70,16 @@ const BuyOca = () => {
                     className={`${Box} is-flex is-align-items-center is-justify-content-space-between my-4`}>
 
                     <div>
-                        <h1 className="has-text-white">0.1USD</h1>
-                        <h2 className="has-text-white">Private Price</h2>
-                        {/* <span className='has-has-text-primary'> OCA </span> */}
+                        <h1 className="ww has-text-weight-semibold">0.1USD</h1>
+                        <h2 className="ww2">
+                            Private Price
+                            <span className='blue1 has-text-weight-semibold has-shadow'> OCA </span>
+                        </h2>
                     </div>
 
                     <div
-                        className="is-flex is-align-items-center is-justify-content-center"
+                        className="is-flex black1 is-align-items-center is-justify-content-center"
                         style={{
-                            background: '#191b1f',
                             padding: "0.6rem",
                             borderRadius: "50%",
                             width: "50px",
@@ -120,14 +121,14 @@ const BuyOca = () => {
                 </div>
                 <div className="currencyChange py-3">
                     <div
-                        className={`${Box} box is-flex is-align-items-center is-justify-content-space-between`}
-                        style={{ background: "#2D2F3A" }}
+                        className={`${Box} box is-flex is-align-items-center is-justify-content-space-between black2`}
+                        // style={{ background: "#2D2F3A" }}
                     >
                         <div className="">
-                            <h1 className="has-text-white">0</h1>
-                            <h2>
+                            <h1 className="ww">0</h1>
+                            <h2 className="ww2 has-text-weight-semibold">
                                 Total
-                                <span>25% OFF</span>
+                                <span className="blue1"> 25% OFF </span>
                             </h2>
                         </div>
 
@@ -145,8 +146,8 @@ const BuyOca = () => {
                     </div>
                 </div>
                 <div className={`${connectWallet} py-2 has-text-centered`}>
-                    <button className={`${connectButton} button is-fullwidth medium has-shadow has-border-radius-10`}>
-                        <span>Connect Wallet</span>
+                    <button className={`${connectButton} button is-fullwidth`}>
+                        <span className="ww">Connect Wallet</span>
                     </button>
                 </div>
             </div>
