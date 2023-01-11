@@ -8,12 +8,12 @@ const RecentPurchase = () => {
             <div>
                 <h1 className='ww2 scroll is-size-4 mb-5'>Recent Purchases</h1>
             </div>
-            <div className={`  ${boxContainer} pr-2`} style={{ overflowY: 'scroll', maxHeight: '100%' }}>
+            <div className={`  ${boxContainer} pr-2`}>
                 <div className={boxes}>
                     {
                         cryptoItems.map((items) => {
                             return (
-                                <div className={paymentBox} style={{ height: '100%' }}>
+                                <div className={paymentBox} style={{ height: '100%' }} key={items.id}>
                                     <div className='is-flex is-align-items-center is-justify-content-space-between' style={{ flexDirection: 'row' }}>
                                         <div className='is-flex is-align-items-center'>
                                             <div className='mr-2'>
@@ -59,6 +59,13 @@ const RecentPurchase = () => {
                                             <div className={coinContainer}>
                                                 <h1 className='mb-0 ww2'>From</h1>
                                                 <h1 className='mb-0 text-weight-semibold ww'>{items.hash}</h1>
+                                            </div>
+                                        </div>
+
+                                        {/* 4 */}
+                                        <div className='is-flex is-align-items-center'>
+                                            <div className={coinContainer}>
+                                                <img src="/media/viewAll.svg" alt="view-icon.svg"  width={20} />
                                             </div>
                                         </div>
                                     </div>

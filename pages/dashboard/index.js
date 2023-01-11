@@ -10,7 +10,7 @@ import RecentPurchase from "../../src/components/RecentPurchase";
 
 
 const OcaDashboard = () => {
-    const { root, DashboardContainer, panelRoot, container, box, BgContainer, item1, item2, item3, item4, vestingBg } = style;
+    const { root, DashboardContainer, panelRoot, container, box, BgContainer, bgContainer, item1, item2, item3, item4, vestingBg } = style;
     return (
         <div className={root}>
             <div className="container px-2" style={{ height: '100%' }}>
@@ -37,7 +37,7 @@ const OcaDashboard = () => {
                                         </div>
                                     </div>
                                     <div className={item3} style={{ height: '100%' }}>
-                                        <div className="box black2">
+                                        <div className={`box black2 ${bgContainer}`}>
                                             <Vesting />
                                         </div>
                                     </div>
