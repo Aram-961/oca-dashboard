@@ -36,8 +36,8 @@ const OcaDashboard = () => {
                                             <CliffPeriod />
                                         </div>
                                     </div>
-                                    <div className={item3} style={{ height: '100%' }}>
-                                        <div className={`box black2 ${bgContainer}`}>
+                                    <div className={item3}>
+                                        <div className={`box black2 ${bgContainer}`} style={{ height: '100%' }}>
                                             <Vesting />
                                         </div>
                                     </div>
